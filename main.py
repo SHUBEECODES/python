@@ -380,9 +380,69 @@
 # print(a)
 
 #ADVANCED SET FUNCTIONS
-a={1,2,3,4,5}
-b={4,5,6,7,8}
-s= a|b
-print(s)
+# a={1,2,3,4,5}
+# b={4,5,6,7,8}
+# s= a^b
+# print(s)
 
+
+#DICTIONARY
+# d={1:"hello",2:56}
+# print(d[2])
+# d={1:10,2:20,3:30,4:40}
+# #CRUD OPERATIONS
+# d[5]=50 #create
+# d[1]=100 #update
+# del d[4] #deletion
+# print(d)
+ 
+#DICTIONARY TRAVERSING
+# d={1:10,2:20,3:30,4:40}
+# for i in d:
+#     print(i) #keys
+# for i in d:
+#     print(d[i]) #values
+# for i in d.values():
+#     print(i)    #another way to access values    
+
+#DEEP COPY
+# a=[1,2,3,4,5]
+# b=a.copy()
+# b[0]=100
+# print(a)
+
+# d1={1:10,2:20,3:30}
+# d2={4:40,5:50}
+
+# for i in d2:
+#     d1[i]=d2[i]
+# print(d1)    TO MERGE TWO DICTT
+# d={10:100,20:200,30:300,40:400,50:500,60:500}
+a=[1,1,1,1,2,2,3,3,4,4,5,5,5,6,6]
+# di={}
+# count=1
+# for i in range(0,len(a)-1,1):
+#     if a[i]==a[i+1]:
+#         count+=1
+#     else:
+#         di[a[i]]=count
+#         count=1
+# di[a[i]]=count
+# print(di)         
+# d={}
+# for i in a:
+#     if i in d.keys():
+#         d[i]+=1
+#     else:
+#         d[i]=1
+# print(d) 
+# 
+d1={10:100,20:200,30:300}
+d2={20:400,30:500,50:700}
+for i in d2:
+    if i in d1:
+        d1[i]=d1[i]+d2[i]
+    else:
+        d1[i]=d2[i]   
+print(d1)        
 
