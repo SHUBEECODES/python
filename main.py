@@ -418,7 +418,7 @@
 #     d1[i]=d2[i]
 # print(d1)    TO MERGE TWO DICTT
 # d={10:100,20:200,30:300,40:400,50:500,60:500}
-a=[1,1,1,1,2,2,3,3,4,4,5,5,5,6,6]
+# a=[1,1,1,1,2,2,3,3,4,4,5,5,5,6,6]
 # di={}
 # count=1
 # for i in range(0,len(a)-1,1):
@@ -437,12 +437,37 @@ a=[1,1,1,1,2,2,3,3,4,4,5,5,5,6,6]
 #         d[i]=1
 # print(d) 
 # 
-d1={10:100,20:200,30:300}
-d2={20:400,30:500,50:700}
-for i in d2:
-    if i in d1:
-        d1[i]=d1[i]+d2[i]
+# d1={10:100,20:200,30:300}
+# d2={20:400,30:500,50:700}
+# for i in d2:
+#     if i in d1:
+#         d1[i]=d1[i]+d2[i]
+#     else:
+#         d1[i]=d2[i]   
+# print(d1)   
+# 
+# EXCEPTION HANDLING
+# a = int(input("enter your number"))
+# try:
+#     print(10/a)
+# except Exception as err:
+#     print(f"you cannot divide a number by {err}")
+# else:
+#     print("good no error occured")
+# finally:
+#     print("i will run no matter what")
+
+
+#RAISE 
+age = int(input("enter your age"))
+try:
+    if age>18 or age<10:
+        raise ValueError("age must be between 10 and 18")
     else:
-        d1[i]=d2[i]   
-print(d1)        
+        print("welcome to the club")
+except Exception as err:
+    print(f"{err} occured")
+
+
+print("all done")    
 
