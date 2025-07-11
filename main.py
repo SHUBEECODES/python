@@ -459,15 +459,114 @@
 
 
 #RAISE 
-age = int(input("enter your age"))
-try:
-    if age>18 or age<10:
-        raise ValueError("age must be between 10 and 18")
-    else:
-        print("welcome to the club")
-except Exception as err:
-    print(f"{err} occured")
+# age = int(input("enter your age"))
+# try:
+#     if age>18 or age<10:
+#         raise ValueError("age must be between 10 and 18")
+#     else:
+#         print("welcome to the club")
+# except Exception as err:
+#     print(f"{err} occured")
 
 
-print("all done")    
+# print("all done")    
+ #FILE HANDLING
+# p = open('main.py')
+# print(p.read())
 
+# r = open('sup.txt','w') # 'w'writes inside the file and if we change it it will change the statement so, we will append it
+# r.write("Hello my name is Shubhangi and i am writing inside this file") 
+# r.close()
+
+# r = open('sup.txt','a')
+# r.write("i am appending some content")
+# r.close()
+
+# r = open('batman.txt','x') # 'x' just creates a new file
+# r.close()
+
+
+#FOUR MODES IN OPEN IN FILE HANDLING - 'r','w','a','x'
+
+#OOPS IN PYTHON
+# class Factory:
+#    a = 12
+
+#    def hello(self):
+#       print("Hello, how are you!!")
+
+# print("hello i am getting initialised")
+
+# obj = Factory()
+# print(obj.a) 
+# obj.hello()
+   
+# class Factory:
+#     def __init__(self,material,zips,pocket):
+#         self.material = material
+#         self.zips = zips
+#         self.pocket = pocket
+
+#     def show(self):
+#         print(f"your details are :- {self.material},{self.pocket},{self.zips}")    
+
+
+# reebok = Factory("Polyster",3,2)
+# campus = Factory("nylon",2,3)
+
+# print(reebok.material)
+
+# class Animal:
+#     name = "Lion" #class attribute
+
+#     def __init__(self,age):
+#         self.age = age  #instance attribute
+
+#     def show(self):
+#         print(f"how are you , my age is {self.age}") #instance method
+
+#     @classmethod
+#     def hello(cls):
+#         print("hello how are you") #class method 
+
+#     @staticmethod
+#     def static():
+#         print("hello all")      #static method
+
+
+# obj = Animal(12)
+# obj.static()
+
+#INHERITANCE
+
+# class Factory: #parent class/super class
+#     def __init__(self,name):
+#         self.name = name
+#     a="Hello i am a Factory"
+#     def show(self):
+#         print(f"hello my name is {self.name}")
+
+# class FactoryMumbai(Factory): #child class/ sub class
+#     def __init__(self, name,age):
+#         super().__init__(name) #it will be the same initialised to parent constructor
+#         self.age= age
+
+# obj = FactoryMumbai("shubhangi",22)  #constructer can be accessed
+# obj.show() #methods can be accessed
+# print(obj.a) #attributes can also be accessed by child class
+
+
+#MULTIPLE INHERITANCE
+class Animal:
+    name1="lion"
+class Human:
+    name2="Shyam"
+class Robots(Animal,Human):
+    name3 = "Charlie123"
+
+obj =  Robots()
+print(obj.name3)            
+
+
+
+        
