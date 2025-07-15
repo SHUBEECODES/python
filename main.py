@@ -557,16 +557,117 @@
 
 
 #MULTIPLE INHERITANCE
+# class Animal:
+#     name1="lion"
+#     def __init__(self,name):
+#         self.name = name
+# class Human:
+#     name2="Shyam"
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+# class Robots(Animal,Human): #since Animal is inherited first , therefore its constructor will be called first. If human is inherited first then its constructor will be called
+#     name3 = "Charlie123"
+
+# obj =  Robots()
+# print(obj.name3)            
+
+
+
+      #MULTILEVEL INHERITANCE
+
+# class Factory:
+#     def __init__(self,material,zips):
+#           self.material = material
+#           self.zips = zips
+
+# class BhopalFactory(Factory):
+#      def __init__(self, material, zips,color):
+#           super().__init__(material, zips)
+#           self.color = color
+
+# class PuneFactory(BhopalFactory):
+#      def __init__(self, material, zips, color,pockets):
+#           super().__init__(material, zips, color)
+#           self.pockets = pockets
+
+
+# obj = PuneFactory()    
+
+#POLYMORPHISM
+# METHOD OVERRIDING
+
+# class Animal:
+#     def show(self):
+#         print("Hello how are you")
+# class Human(Animal):
+#     def show(self):
+#         print("My name is Shubhangi")
+
+# obj = Human()
+# obj.show()   #the method of the child class will override the method of the parent class when the method name is same in both parent class and child class  
+# 
+
+#ENCAPSULATION
+# PUBLIC ACCESS MODIFIERS AND PROTECTED
+# class Pune:
+#     a="pune"
+#     _b = "I am pune factory" #PROTECTED SINCE IT IS WITH AN UNDERSCORE , BUT IT IS THE SAME AS PUBLIC
+#     __c = "I am a private attribute" #PRIVATE ATTRIBUTE USING A DOUBLE UNDERSCORE
+
+#     def sh(self):
+#         print(Pune.__c) #private attribute is accessed inside the class only , using the class
+
+# class Bhopal(Pune):
+#     def show(self):
+#         print(super().a)  # this is normally public access modifier use. Not the use of super().a but just to show that all the methods and attributes are accessible     
+
+# obj = Bhopal()
+# obj2 = Pune()
+# obj2.sh()
+
+#ABSTRACTION
+
+# from abc import ABC,abstractmethod
+
+# class abstract(ABC):
+#     @abstractmethod
+#     def perimeter(self):
+#         pass
+
+#     @abstractmethod
+#     def area(self):
+#         pass
+
+# class Square(abstract):
+#      def perimeter(self,side):
+         
+#          print("i calculate perimeter")  
+
+#      def area(self,side):
+#          print("i calculte area")
+
+# obj = Square() 
+# obj.area(2)       
+# 
+# DUNDER METHODS
 class Animal:
-    name1="lion"
-class Human:
-    name2="Shyam"
-class Robots(Animal,Human):
-    name3 = "Charlie123"
+    def __init__(self,name,age): #initialization dunder method, we have already seen
+        self.name=name 
+        self.age=age 
+    def __str__(self): #dunder method of string
+        return f"The name of your Animal is {self.name}"   
+    # def __add__(self,other):
+    #     return f"The sum of ages is {self.age+ other.age}"
+    def __add__(self,other):
+        sum=0
+        for i in other:
+            sum+=i.age
+        return f"the sum of the age is {self.age+sum}"    
 
-obj =  Robots()
-print(obj.name3)            
+    
+obj = Animal("Lion",12)
+obj2 = Animal("tiger",22)
+obj3 = Animal("Monkey",13)
+print(obj+(obj2,obj3))  #here we have passed obj2 and obj3 in the form of tuple
 
-
-
-        
