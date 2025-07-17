@@ -651,23 +651,119 @@
 # obj.area(2)       
 # 
 # DUNDER METHODS
-class Animal:
-    def __init__(self,name,age): #initialization dunder method, we have already seen
-        self.name=name 
-        self.age=age 
-    def __str__(self): #dunder method of string
-        return f"The name of your Animal is {self.name}"   
-    # def __add__(self,other):
-    #     return f"The sum of ages is {self.age+ other.age}"
-    def __add__(self,other):
-        sum=0
-        for i in other:
-            sum+=i.age
-        return f"the sum of the age is {self.age+sum}"    
+# class Animal:
+#     def __init__(self,name,age): #initialization dunder method, we have already seen
+#         self.name=name 
+#         self.age=age 
+#     def __str__(self): #dunder method of string
+#         return f"The name of your Animal is {self.name}"   
+#     # def __add__(self,other):
+#     #     return f"The sum of ages is {self.age+ other.age}"
+#     def __add__(self,other):
+#         sum=0
+#         for i in other:
+#             sum+=i.age
+#         return f"the sum of the age is {self.age+sum}"    
 
     
-obj = Animal("Lion",12)
-obj2 = Animal("tiger",22)
-obj3 = Animal("Monkey",13)
-print(obj+(obj2,obj3))  #here we have passed obj2 and obj3 in the form of tuple
+# obj = Animal("Lion",12)
+# obj2 = Animal("tiger",22)
+# obj3 = Animal("Monkey",13)
+# print(obj+(obj2,obj3))  #here we have passed obj2 and obj3 in the form of tuple
 
+
+#DECORATOR
+
+# def decorate(func): #this func is the function that is decorated by the decorator @decorate below.It is passed a an argument.
+
+#     def wrapper():
+#         print("I will print before the hello function")
+#         func()
+#         print("i will print after the function")
+#     return wrapper    
+
+
+# @decorate
+# def hello():
+#     print("Hello my name is Shubhangi")
+
+# hello()    
+
+#ARGS
+
+# def addition(*args): #*args converts our input of argument into tuple form
+#     sum=0
+#     for i in args:
+#         sum+=i
+#     print(sum)    
+
+# addition(1,2,3,4,5,345,345435,3333,56758,2323)  
+# 
+# KWARGS-KEYWORD ARGUMENT
+# def func(**kwargs):
+#     print(kwargs)
+
+# func(a=12,b=13,c=13)
+
+# def information(**kwargs):
+#     for i in kwargs:
+#         print(f"{i} : {kwargs[i]}") #because kwargs is in key value pair, dictionary
+
+
+# information(name="Shubhangi",age=22,designation="fresher")    
+
+#decoraters and args , kwargs use together
+
+# def decorator(func):
+#     def wrapper(*args,**kwargs):
+#         print("The addition to your numbers is:")
+#         func(*args,**kwargs)
+#         print("Thankyou for the request")
+#     return wrapper
+    
+# @decorator
+# def func(a,b):
+#     print(a+b)
+
+# func(2,3)
+
+#COMPREHENSION -- instead of writing multiple lines of code,we can just write all of it in a single line
+
+#EXAMPLE OF LIST COMPREHENSION
+# l=[i for i in range(1,21) if i%2==0] #1 variable here i, then loop , then condition
+# print(l)
+
+#DICTIONARY COMPREHENSION
+# d={i : i**2 for i in range(1,11)}
+# print(d)
+
+#SET COMPREHENSION
+# s = { i**i for i in range(2,9)}
+# print(s)
+
+#LAMBDA FUNCTIONS -- functions that are written in one line only
+# addition = lambda a,b : a+b
+# print(addition(12,13))
+# eo = lambda i : "even" if i%2==0 else "odd"
+# print(eo(12))
+
+# #MAP 
+# a=[1,2,3,4,5]
+# def double(i):
+#     return i*2
+# result = map(lambda i: i*2,a)
+# result = map(double,a)
+# print(list(result))
+   
+#FILTER
+# a=[1,2,3,4,5,6,7,8,9]
+# result = filter(lambda i : True if i%2==0 else False,a)
+# print(list(result))
+
+#MODULES
+# import maths
+# print(maths.addition(2,3))
+
+#PACKAGES
+from modelss import hello,maths
+hello.hello()
